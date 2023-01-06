@@ -19,12 +19,32 @@ public class LineComparison {
 		float y2 = sc.nextFloat();
 
 		System.out.println();
-		System.out.printf("The length of Line L1( " + x1 + " , " + y1 +")" + "and" + " (" + x2 + ", " + y2 + ") " + " is %.2f", getLength(x1, y1, x2, y2));
+		System.out.print("Enter the coordinates for point p2 (x3, y3): ");
+		float x3 = sc.nextFloat();
+		float y3 = sc.nextFloat();
+		
+		System.out.print("Enter the coordinates for point p2 (x4, y4): ");
+		float x4 = sc.nextFloat();
+		float y4 = sc.nextFloat();
+		System.out.println();
+		
+		String lengthL1 = String.format("%.02f" , getLength(x1, y1, x2, y2));
+		String lengthL2 = String.format("%.02f" , getLength(x3, y3, x4, y4));
+
+		System.out.println("Length of line L1: " +lengthL1);
+		System.out.println("Length of line L2: " +lengthL2);
+		System.out.println();
+		
+		if (lengthL1.equals(lengthL2)) {
+			System.out.println("The line L1 and L2 are equal");
+		}else {
+			System.out.println("The lines are not equal");
+		}
 		
 		}
 		static double getLength(float x1, float y1, float x2, float y2) {
 			
 			return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
 
-	}
+		  }
 }
